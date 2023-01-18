@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css?family=Questrial&display=swap");
+
+:root {
+  --bcg-color: white;
+  --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0.24);
+  --border: 4px solid gray;
+  --dark-button: black;
+  --dark-button-text: white;
+}
+
+.dark-theme {
+  --bcg-color: black;
+  --box-shadow: 0 1px 3px rgba(255, 255, 255, 0.12),
+    0 1px 2px rgba(255, 255, 0.24);
+  --border: 4px solid white;
+  --dark-button: white;
+  --dark-button-text: black;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Questrial", sans-serif;
+  background-color: var(--bcg-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.dark-mode {
+  right: 70px;
+  top: 20px;
+  position: absolute;
+  font-size: 15px;
+  border-radius: 5px;
+  background-color: var(--dark-button);
+  cursor: pointer;
+  border: 0;
+  padding: 5px 10px;
+  color: var(--dark-button-text);
+}
+
+.dark-mode:hover {
+  transform: scale(1.1);
+}
+
+.container {
+  display: flex;
+  width: 90vw;
+}
+
+.card {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+  border-radius: 50px;
+  color: white;
+  text-shadow: black 0.4em 0.4em 0.5em;
+  cursor: pointer;
+  flex: 0.5;
+  margin: 10px;
+  position: relative;
+  transition: flex 0.7s ease-in;
+  border: var(--border);
+}
+
+.card h3 {
+  font-size: 24px;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  margin: 0;
+  opacity: 0;
+}
+
+.card.active {
+  flex: 5;
+}
+
+.card.active h3 {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s;
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 100vh;
+  }
+
+  .card:nth-of-type(4),
+  .card:nth-of-type(5) {
+    display: none;
+  }
+}
