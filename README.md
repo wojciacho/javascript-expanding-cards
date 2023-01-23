@@ -3,7 +3,7 @@
 ## Vanilla Javascript
 
 Simple project built in Vanilla Javascript. It is expanding cards.
-This app has 7 different images which you can click, also I added in this project dark theme functionality.
+This app has 7 different images which you can click, also I added in this project dark theme functionality and localstorage.
 
 Inspiration to this project I got from udemy course created by Brad Traversy and Florin Pop.
 
