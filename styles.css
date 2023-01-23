@@ -4,8 +4,6 @@
   --bcg-color: white;
   --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0.24);
   --border: 4px solid gray;
-  --dark-button: black;
-  --dark-button-text: white;
 }
 
 .dark-theme {
@@ -13,8 +11,6 @@
   --box-shadow: 0 1px 3px rgba(255, 255, 255, 0.12),
     0 1px 2px rgba(255, 255, 0.24);
   --border: 4px solid white;
-  --dark-button: white;
-  --dark-button-text: black;
 }
 
 * {
@@ -38,11 +34,12 @@ body {
   position: absolute;
   font-size: 15px;
   border-radius: 5px;
-  background-color: var(--dark-button);
+  background-color: white;
   cursor: pointer;
   border: 0;
   padding: 5px 10px;
-  color: var(--dark-button-text);
+  color: black;
+  border: 2px solid blue;
 }
 
 .dark-mode:hover {

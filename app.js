@@ -1,12 +1,32 @@
 const cards = document.querySelectorAll(".card");
-const button = document.querySelector(".dark-mode");
+const buttonEl = document.querySelector(".dark-mode");
 
-button.addEventListener("click", () => {
-  document.documentElement.classList.toggle("dark-theme");
-  if (document.documentElement.classList.contains("dark-theme")) {
-    button.innerText = "Light theme";
+let darkMode = localStorage.getItem("dark-mode");
+
+const enableDarkMode = () => {
+  document.documentElement.classList.add("dark-theme");
+  buttonEl.classList.remove("dark-theme");
+  buttonEl.innerText = "Light Theme";
+  localStorage.setItem("dark-mode", "enabled");
+};
+
+const disableDarkMode = () => {
+  document.documentElement.classList.remove("dark-theme");
+  buttonEl.classList.add("dark-theme");
+  buttonEl.innerText = "Dark Theme";
+  localStorage.setItem("dark-mode", "disabled");
+};
+
+if (darkMode === "enabled") {
+  enableDarkMode();
+}
+
+buttonEl.addEventListener("click", (e) => {
+  darkMode = localStorage.getItem("dark-mode");
+  if (darkMode === "disabled") {
+    enableDarkMode();
   } else {
-    button.innerText = "Dark theme";
+    disableDarkMode();
   }
 });
 
